@@ -1,11 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "David",
-    "age": 25,
-    "city": "Tel Aviv"
-  },
-  {
     "id": 2,
     "name": "Sarah",
     "age": 30,
@@ -91,9 +85,9 @@
   },
   {
     "id": 28,
-    "name": "======",
+    "name": "MARK HACHATICH",
     "age": 27,
-    "city": "======"
+    "city": "GJHGJHGJHJH="
   },
   {
     "id": 29,

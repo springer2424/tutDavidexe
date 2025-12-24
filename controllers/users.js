@@ -75,6 +75,7 @@ export const uptateUser = async (req, res) => {
     user.name = body.name || user.name;
     user.age = body.age || user.age;
     user.city = body.city || user.city;
+
     await fs.writeFile(USERS_PATH, JSON.stringify(users, null, 2), "utf-8");
     res.status(200).json(user);
   } catch (err) {
@@ -95,6 +96,12 @@ export const createUser = async (req, res) => {
       id: getNextId(users),
       ...body,
     };
+
+    // if(!body.name) res.status(400).json({msg: "Error: please provide name"})
+    // user.name = body.name;
+    // user.age = body.age || "";
+    // user.city = body.city || undefined;
+
     users.push(newUser);
     await fs.writeFile(USERS_PATH, JSON.stringify(users, null, 2), "utf-8");
     return res.status(201).json(newUser);

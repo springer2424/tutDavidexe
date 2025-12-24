@@ -6,6 +6,13 @@ app.use(express.json());
 
 import users from "./routes/users.js";
 
+
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  res.setHeader("X-timestamp",new Date())
+  next();
+});
+
 app.get("/", async (req, res) => {
   res.json({
     message: "Welcome to Users List API",
